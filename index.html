@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brandon Vega | Portfolio de prácticas</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --bg-soft: #111827;
+      --card: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #22d3ee;
+      --border: rgba(255,255,255,0.08);
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #0f172a 35%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(11,17,32,0.8);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      padding: 80px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--accent-2);
+      background: rgba(34,211,238,0.08);
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .hero-card,
+    .card {
+      background: rgba(31,41,55,0.72);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #001018;
+      border: none;
+    }
+
+    .section {
+      padding: 42px 0;
+    }
+
+    .section-header {
+      margin-bottom: 22px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .post-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      color: var(--accent-2);
+      background: rgba(56,189,248,0.06);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      border-left: 3px solid var(--accent);
+      padding: 8px 0 8px 16px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 36px;
+      padding: 22px 0 36px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Brandon Vega</div>
+      <div class="nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#practicas">Prácticas</a>
+        <a href="#aprendizajes">Aprendizajes</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">Portfolio técnico en construcción</div>
+        <h1>Aprendiendo ingeniería industrial desde dentro de la fábrica</h1>
+        <p class="lead">
+          Soy Brandon Vega, estudiante de Ingeniería Electrónica Industrial y Automática. En esta web comparto lo que voy aprendiendo durante mis prácticas, con foco en automatización, procesos industriales, robótica y mejora continua.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#practicas">Ver primeras experiencias</a>
+          <a class="btn" href="#contacto">Contacto</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Ahora mismo estoy aprendiendo sobre</h3>
+        <div class="tag-row">
+          <span class="tag">Carrocerías</span>
+          <span class="tag">Robots ABB</span>
+          <span class="tag">Robots KUKA</span>
+          <span class="tag">MOPs</span>
+          <span class="tag">PLCs</span>
+          <span class="tag">AGVs</span>
+          <span class="tag">Visión artificial</span>
+          <span class="tag">Procesos industriales</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="sobre-mi" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Sobre mí</h2>
+          <p class="muted">Una presentación breve, clara y profesional.</p>
+        </div>
+        <div class="card">
+          <p>
+            Estoy desarrollando este portfolio para documentar mis prácticas y transformar esa experiencia en aprendizaje visible. Mi objetivo es mostrar, de forma ordenada y profesional, cómo voy entendiendo los procesos reales de una planta industrial y las tecnologías que intervienen en ellos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="practicas" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Prácticas en empresa</h2>
+          <p class="muted">Entradas iniciales basadas en observación técnica y aprendizaje real.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card post-card">
+            <h3>Primera semana en carrocerías</h3>
+            <p>
+              Durante la primera semana conocí las principales zonas de trabajo, los procesos de fabricación y la terminología utilizada dentro de la planta. También pude observar cómo se coordinan distintos perfiles técnicos para mantener y mejorar el sistema productivo.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Fabricación</span>
+              <span class="tag">Procesos</span>
+              <span class="tag">Observación técnica</span>
+            </div>
+          </article>
+
+          <article class="card post-card">
+            <h3>Tecnologías observadas en planta</h3>
+            <p>
+              En estas primeras semanas he visto robots ABB y KUKA, interfaces MOP conectadas a PLC, AGVs en movimiento continuo y proyectos relacionados con visión artificial mediante cámaras industriales de alta fiabilidad.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Robótica</span>
+              <span class="tag">Automatización</span>
+              <span class="tag">Industria 4.0</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="aprendizajes" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Evolución de aprendizaje</h2>
+          <p class="muted">Una línea sencilla para ir mostrando progreso semana a semana.</p>
+        </div>
+        <div class="card timeline">
+          <div class="timeline-item">
+            <strong>Semana 1:</strong> visión general de zonas, procesos y vocabulario técnico interno.
+          </div>
+          <div class="timeline-item">
+            <strong>Semana 2:</strong> observación de robots industriales, MOPs, AGVs y primeros proyectos de mejora tecnológica.
+          </div>
+          <div class="timeline-item">
+            <strong>Próximamente:</strong> entradas más detalladas sobre soldadura, pintura, automatización y visión artificial.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contacto</h2>
+          <p class="muted">Aquí luego pondrás tu correo o LinkedIn.</p>
+        </div>
+        <div class="card">
+          <p>Email: tucorreo@ejemplo.com</p>
+          <p>LinkedIn: tu perfil aquí</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Portfolio personal de Brandon Vega · Ingeniería y aprendizaje en entorno industrial</p>
+    </div>
+  </footer>
+</body>
+</html>
